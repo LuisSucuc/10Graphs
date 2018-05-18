@@ -1,0 +1,29 @@
+{
+  "grafo": {
+    "vertices": {
+      "vertice": [
+        "V1",
+        "V2",
+        "V3",
+        "V4"
+      ]
+    },
+    "aristas": {
+      "arista": [
+        {
+          "inicio": "V1",
+          "fin": "V2"
+        },
+        {
+          "inicio": "V2",
+          "fin": "V3"
+        },
+        {
+          "inicio": "V3",
+          "fin": "V4"
+        }
+      ]
+    }
+  }
+}
+
