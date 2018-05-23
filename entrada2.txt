@@ -1,0 +1,65 @@
+{
+  "grafo": {
+    "vertices": {
+      "vertice": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+      	"V5",
+      	"V6",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11", 
+        "V12"
+      ]
+    },
+    "aristas": {
+      "arista": [
+        {
+          "inicio": "V1",
+          "fin": "V2"
+        },
+        {
+          "inicio": "V2",
+          "fin": "V1"
+        },
+        {
+          "inicio": "V2",
+          "fin": "V3"
+        },
+        {
+          "inicio": "V3",
+          "fin": "V4"
+        },
+        {
+          "inicio": "V4",
+          "fin": "V4"
+        },
+
+        {
+          "inicio": "V1",
+          "fin": "V10"
+        },
+
+        {
+          "inicio": "V6",
+          "fin": "V2"
+        },
+        {
+          "inicio": "Vsdf6",
+          "fin": "V2"
+        },
+        {
+          "inicio": "sdfV6",
+          "fin": "Vsdf2"
+        }
+
+      ]
+    }
+  }
+}
+
