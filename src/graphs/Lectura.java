@@ -7,41 +7,20 @@ import com.google.gson.JsonParser;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Lectura {
-    /*
-    * Path del archivo de lectura
-    */
-    String path;
-    
-    /**
-     * Obtiene el path del archivo deseado
-     */
-    public void getPath() {
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File("."));
-        chooser.setDialogTitle("Selecciona un archivo");
-        chooser.setAcceptAllFileFilterUsed(false);
-
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            path = chooser.getSelectedFile().toString();
-        } else {
-            System.exit(0);
-        }
-    }
-    
+ 
     /**
      * Leer el archivo enviado y convertirlo a JSON
      * y posteriormente realizar la llamda a
      * la clase para dibujarlo 
+     * @param path
+     * @throws java.io.FileNotFoundException
      */
-    public void leerArchivoYCrear() throws FileNotFoundException {
-
-        try {
-
+    public void leerArchivoYCrear(String path) throws FileNotFoundException {
+        
             FileReader file = new FileReader(path);
             JsonElement datos = new JsonParser().parse(file);
             //Se convierte en un objeto porque tiene {}
@@ -65,6 +44,9 @@ public class Lectura {
                 if (i < 10 && aVertices.indexOf(valor) < 0) {
                     aVertices.add(valor);
                 } else {
+                    if (aVertices.indexOf(valor) >= 0) {
+                        i--;
+                    }
                     aErrors.add(valor);
                 }
                 i++;
@@ -117,17 +99,12 @@ public class Lectura {
             Dibujar applet = new Dibujar(aVertices, matriz);
             JFrame frame = new JFrame();
             frame.getContentPane().add(applet);
-            frame.setTitle("Dibujar grafos UMG");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setTitle("Grafo generado");
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "El archivo no tiene el formato esperado. \nSeleccione otro archivo", "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
-            getPath();
-            leerArchivoYCrear();
-        }
+      
 
     }
     
@@ -138,11 +115,11 @@ public class Lectura {
         String errors = "";
         if (aErrors.size() > 0) {
             System.out.println("\n*********** "
-                    + ".Vertices no dibujados ***********");
+                    + "Vertices no dibujados ***********");
             String sVertices = "";
             sVertices = aErrors.stream().map((vertice) -> vertice + ", ").reduce(sVertices, String::concat);
             System.out.println(sVertices);
-            errors  += "VERTICES NO DIBUJADOS \n" + sVertices;
+            errors  += "VERTICES NO DIBUJADOS \n" + sVertices + "\n\n";
         }
 
         if (aristaError.size() > 0) {
@@ -195,9 +172,9 @@ public class Lectura {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        Lectura leer = new Lectura();
-        leer.getPath();
-        leer.leerArchivoYCrear();
+//        Lectura leer = new Lectura();
+//        leer.getPath();
+//        leer.leerArchivoYCrear();
 
     }
 
