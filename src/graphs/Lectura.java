@@ -12,9 +12,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Lectura {
-
+    /*
+    * Path del archivo de lectura
+    */
     String path;
-
+    
+    /**
+     * Obtiene el path del archivo deseado
+     */
     public void getPath() {
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
@@ -27,8 +32,13 @@ public class Lectura {
             System.exit(0);
         }
     }
-
-    public void leerArchivo() throws FileNotFoundException {
+    
+    /**
+     * Leer el archivo enviado y convertirlo a JSON
+     * y posteriormente realizar la llamda a
+     * la clase para dibujarlo 
+     */
+    public void leerArchivoYCrear() throws FileNotFoundException {
 
         try {
 
@@ -97,8 +107,7 @@ public class Lectura {
 
                     aristaError.add(error);
                 }
-
-//            System.out.println(inicio + " --> " +fin);
+                
             }
 
             /* Imprimir en consola*/
@@ -117,28 +126,48 @@ public class Lectura {
             JOptionPane.showMessageDialog(null, "El archivo no tiene el formato esperado. \nSeleccione otro archivo", "ERROR",
                     JOptionPane.ERROR_MESSAGE);
             getPath();
+            leerArchivoYCrear();
         }
 
     }
-
+    
+    /*
+    * Muestra los errores en popup
+    */
     private void imprimirErrores(ArrayList<String> aErrors, ArrayList<String> aristaError) {
+        String errors = "";
         if (aErrors.size() > 0) {
-            System.out.println("\n*********** Vertices no dibujados ***********");
+            System.out.println("\n*********** "
+                    + ".Vertices no dibujados ***********");
             String sVertices = "";
             sVertices = aErrors.stream().map((vertice) -> vertice + ", ").reduce(sVertices, String::concat);
             System.out.println(sVertices);
+            errors  += "VERTICES NO DIBUJADOS \n" + sVertices;
         }
 
         if (aristaError.size() > 0) {
+            String errorArista ="";
             System.out.println("\n*********** Aristas no dibujadas ***********");
             String sArista = "";
             for (String arista : aristaError) {
                 System.out.println(arista + " ");
+                errorArista +=arista + "\n";
             }
+            errors  += "\nARISTAS NO DIBUJADAS \n" + errorArista;
+        }
+        
+        if (!"".equals(errors)) {
+             JOptionPane.showMessageDialog(null, errors, "ADVERTENCIA",
+                    JOptionPane.WARNING_MESSAGE);
+            
         }
 
     }
-
+    
+    /*
+    * Imprime en consola la matriz que utilizará para 
+    * generar el grafo 
+    */
     private void imprimirMatriz(int[][] matriz, ArrayList<String> aVertices) {
 
         //Valor máximo a imprimir es el tamaño de arrayList
@@ -168,7 +197,7 @@ public class Lectura {
     public static void main(String[] args) throws FileNotFoundException {
         Lectura leer = new Lectura();
         leer.getPath();
-        leer.leerArchivo();
+        leer.leerArchivoYCrear();
 
     }
 
