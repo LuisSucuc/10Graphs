@@ -170,12 +170,4 @@ public class Lectura {
 
         }
     }
-
-    public static void main(String[] args) throws FileNotFoundException {
-//        Lectura leer = new Lectura();
-//        leer.getPath();
-//        leer.leerArchivoYCrear();
-
-    }
-
 }

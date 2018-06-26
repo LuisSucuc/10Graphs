@@ -1,0 +1,53 @@
+{
+  "grafo": {
+    "vertices": {
+      "vertice": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9"
+      ]
+    },
+    "aristas": {
+      "arista": [
+        {
+          "inicio": "V9",
+          "fin": "V2"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V3"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V4"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V5"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V6"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V7"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V8"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V1"
+        }
+      ]
+    }
+  }
+}

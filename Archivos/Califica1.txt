@@ -1,0 +1,62 @@
+{
+  "grafo": {
+    "vertices": {
+      "vertice": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ]
+    },
+    "aristas": {
+      "arista": [
+        {
+          "inicio": "A",
+          "fin": "A"
+        },
+        {
+          "inicio": "B",
+          "fin": "B"
+        },
+        {
+          "inicio": "C",
+          "fin": "C"
+        },
+        {
+          "inicio": "D",
+          "fin": "D"
+        },
+        {
+          "inicio": "E",
+          "fin": "E"
+        },
+        {
+          "inicio": "F",
+          "fin": "F"
+        },
+        {
+          "inicio": "G",
+          "fin": "G"
+        },
+        {
+          "inicio": "H",
+          "fin": "H"
+        },
+        {
+          "inicio": "I",
+          "fin": "I"
+        },
+        {
+          "inicio": "J",
+          "fin": "J"
+        }
+      ]
+    }
+  }
+}

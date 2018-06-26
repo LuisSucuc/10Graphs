@@ -1,0 +1,122 @@
+{
+  "grafo": {
+    "vertices": {
+      "vertice": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10"
+      ]
+    },
+    "aristas": {
+      "arista": [
+        {
+          "inicio": "V10",
+          "fin": "V1"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V2"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V3"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V4"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V5"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V6"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V7"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V8"
+        },
+        {
+          "inicio": "V10",
+          "fin": "V9"
+        },
+        {
+          "inicio": "V2",
+          "fin": "V3"
+        },
+        {
+          "inicio": "V3",
+          "fin": "V4"
+        },
+        {
+          "inicio": "V4",
+          "fin": "V5"
+        },
+        {
+          "inicio": "V5",
+          "fin": "V6"
+        },
+        {
+          "inicio": "V6",
+          "fin": "V7"
+        },
+        {
+          "inicio": "V7",
+          "fin": "V8"
+        },
+        {
+          "inicio": "V8",
+          "fin": "V9"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V2"
+        },
+        {
+          "inicio": "V2",
+          "fin": "V2"
+        },
+        {
+          "inicio": "V3",
+          "fin": "V3"
+        },
+        {
+          "inicio": "V4",
+          "fin": "V4"
+        },
+        {
+          "inicio": "V5",
+          "fin": "V5"
+        },
+        {
+          "inicio": "V6",
+          "fin": "V6"
+        },
+        {
+          "inicio": "V7",
+          "fin": "V7"
+        },
+        {
+          "inicio": "V8",
+          "fin": "V8"
+        },
+        {
+          "inicio": "V9",
+          "fin": "V9"
+        }
+      ]
+    }
+  }
+}

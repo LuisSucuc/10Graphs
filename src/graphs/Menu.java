@@ -4,23 +4,23 @@ package graphs;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-public class Bienvenido extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame {
 
     public String path;
     
     /**
      *Constructor de la clase
      */
-    public Bienvenido() {
+    public Menu() {
         initComponents();
-        btnGenerarGrafo.setEnabled(false);
+        limpiar();
     }
     
     /**
      * Limpia el path y deshabilita la generación del grafo
      */
     public void limpiar(){
-        lblPath.setText("No seleccionado...");
+        lblPath.setText("Archivo no seleccionado...");
         btnGenerarGrafo.setEnabled(false);
         path = "";
     }
@@ -47,16 +47,14 @@ public class Bienvenido extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         btnGetArchivo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnGenerarGrafo = new javax.swing.JButton();
         lblPath = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("BIENVENIDO");
 
         btnGetArchivo.setText("Seleccionar Archivo");
         btnGetArchivo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -91,12 +89,14 @@ public class Bienvenido extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("/media/luis/Matthew/Dropbox/Programacion 3/Proyecto/Graphs/umg.jpg")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPath, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -106,18 +106,18 @@ public class Bienvenido extends javax.swing.JFrame {
                             .addComponent(btnGetArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(279, 279, 279))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addGap(95, 95, 95)
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(lblPath)
                 .addGap(18, 18, 18)
                 .addComponent(btnGetArchivo)
@@ -127,7 +127,7 @@ public class Bienvenido extends javax.swing.JFrame {
                 .addComponent(btnGenerarGrafo)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalir)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -173,20 +173,21 @@ public class Bienvenido extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Bienvenido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Bienvenido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Bienvenido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Bienvenido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Bienvenido().setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }
@@ -196,7 +197,7 @@ public class Bienvenido extends javax.swing.JFrame {
     private javax.swing.JButton btnGetArchivo;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblPath;
     // End of variables declaration//GEN-END:variables
 }
